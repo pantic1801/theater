@@ -1,0 +1,21 @@
+﻿@model IEnumerable<string>
+<a class="btn btn-block 
+   @(ViewBag.Kategorija=="" ? "btn-primary": "btn-default") "
+   asp-action="Index"
+   asp-controller="Home"
+   asp-route-kategorija="">
+    Sve predstave
+</a>
+@foreach (string kategorija in Model)
+{
+    <a class="btn btn-block 
+        @(kategorija == ViewBag.Kategorija ? "btn-primary": "btn-default")"
+       asp-action="Index"
+       asp-controller="Home"
+       asp-route-kategorija="@kategorija">
+        @kategorija
+    </a>
+}
+
+
+

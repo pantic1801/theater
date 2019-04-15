@@ -1,0 +1,32 @@
+﻿@using WebPozoriste.Extensions
+@model Predstava
+<div class="well">
+
+    <h3>
+        <strong>@Model.Naziv</strong>
+        <span class="pull-right label label-primary">
+            @Model.Cena.ToString()
+        </span>
+    </h3>
+
+    <form id="@Model.PredstavaId" asp-action="DodajKartu" asp-controller="Narucivanje" method="post">
+        <input type="hidden" asp-for="PredstavaId" />
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PutanjaQueryString()" />
+        <span class="lead">
+
+
+            <button type="submit" class="btn btn-warning btn-lg pull-right">
+                Naruci kartu
+            </button>
+
+            Datum prikazivanja: @Model.DatumIVreme h <br />
+            Reziser:  @Model.Reziser <br />
+            <a asp-action="Delete" asp-controller="Home" asp-route-id="@Model.PredstavaId" class="pull-right">Obrisi</a>
+
+            Glumci:  @Model.Glumci <br />
+            <a asp-action="Edit" asp-controller="Home" asp-route-id="@Model.PredstavaId" class="pull-right">Promeni</a>
+            Opis:  @Model.Opis <br />
+
+        </span>
+    </form>
+    </div>

@@ -1,0 +1,1 @@
+﻿{"ContextClassName":"PozoristeContext","DefaultDacpacSchema":null,"IdReplace":false,"IncludeConnectionString":true,"OutputPath":"Models","ProjectRootNamespace":"WebPozoriste","SelectedToBeGenerated":0,"Tables":["dbo.Karta","dbo.Korisnik","dbo.Porudzbina","dbo.Predstava","dbo.Slike"],"UseDatabaseNames":true,"UseFluentApiOnly":false,"UseHandleBars":false,"UseInflector":false}

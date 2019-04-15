@@ -1,0 +1,47 @@
+﻿
+
+@{
+    ViewData["Title"] = "Kontakt";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+<address>
+    Trg Heroja 1<br />
+    Smederevska Palanka, Srbija<br />
+    <p>026/314-589</p>
+
+</address>
+
+
+<div class="pull-right">
+
+    <link rel="stylesheet" href="~/css/kontaktforma.css">
+
+    <form action="/Home/Posalji" method="post">
+
+        <div id="glavni" class="pull-right">
+            <p>Kontaktirajte nas</p>
+
+            <label for="TextIme">Ime:</label>
+            <input id="TextIme" type="text" name="Ime" required autofocus />
+            <br>
+            <label for="TextPrezime">Prezime:</label>
+            <input id="TextPrezime" type="text" name="Prezime" required />
+            <br>
+            <label for="TextEmail">Email:</label>
+            <input id="TextEmail" type="email" name="Email" required />
+            <br>
+            <label class="ta" for="TextPoruka">Poruka:</label>
+            <textarea id="TextPoruka" rows="12" cols="20" name="Poruka" required
+                      placeholder="Vasa poruka"></textarea>
+            <br>
+            <label for=""></label>
+            <button id="Button1" type="submit">Posalji</button>
+        </div>
+    </form>
+</div>
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1426.1319821034472!2d20.955409356419754!3d44.36616937910329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4750cf0236b52899%3A0x8a7710d3f863cf04!2z0KLRgNCzINCl0LXRgNC-0ZjQsCAxLCDQodC80LXQtNC10YDQtdCy0YHQutCwINCf0LDQu9Cw0L3QutCw!5e0!3m2!1ssr!2srs!4v1531857085593" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+

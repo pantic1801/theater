@@ -1,0 +1,64 @@
+﻿@model WebPozoriste.Models.Predstava
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Obrisi</h2>
+
+<h3>Da li ste sigurni da zelite da obrisete?</h3>
+<div>
+    <h4>Predstava</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Kategorija
+        </dt>
+        <dd>
+            @Model.Kategorija
+        </dd>
+        <dt>
+            Naziv
+        </dt>
+        <dd>
+            @Model.Naziv
+        </dd>
+        <dt>
+            Opis
+        </dt>
+        <dd>
+            @Model.Opis
+        </dd>
+        <dt>
+            Datum i vreme
+        </dt>
+        <dd>
+            @Model.DatumIVreme
+        </dd>
+        <dt>
+            Reziser
+        </dt>
+        <dd>
+            @Model.Reziser
+        </dd>
+        <dt>
+            Glumci
+        </dt>
+        <dd>
+            @Model.Glumci
+        </dd>
+     
+        <dt>
+            Cena
+        </dt>
+        <dd>
+            @Model.Cena
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PredstavaId" />
+        <input type="submit" value="Obrisi" class="btn btn-default" /> |
+        <a asp-action="Index">Povratak na predstave</a>
+    </form>
+</div>

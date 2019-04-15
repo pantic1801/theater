@@ -1,0 +1,75 @@
+﻿@model Narucivanje
+<h2>Spisak Vasih narucenih karata</h2>
+<div class="row">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Kolicina</th>
+                <th>Karta</th>
+                <th class="text-right">Cena</th>
+                <th class="text-right">Vrednost</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (NarucenaKarta karta in Model.Kartas)
+            {
+                <tr>
+                    <td class="text-center">@karta.Kolicina</td>
+                    <td class="text-left">@karta.Predstava.Naziv</td>
+                    <td class="text-right">@karta.Predstava.Cena.ToString()</td>
+                    <td class="text-right">
+                        @((karta.Kolicina * karta.Predstava.Cena).ToString())
+                    </td>
+                    <td>
+                        <form asp-action="ObrisiKartu" method="post">
+                            <input type="hidden" name="PredstavaId" value="@karta.Predstava.PredstavaId" />
+                            <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+                            <button type="submit" class="btn btn-sm btn-danger"> Obrisi</button>
+
+                        </form>
+                    </td>
+                    <td>
+
+                        <form asp-action="PromeniKartu" method="post">
+
+                            <input type="hidden" name="PredstavadId" value="@karta.Predstava.PredstavaId" />
+                            <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+                            <div class="input-group">
+                                <input type="number" name="kolicina" value="@karta.Kolicina" class="form-control" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success" type="submit">Promeni</button>
+                                </span>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Ukupno:</td>
+                <td class="text-right">
+                    @Model.Vrednost().ToString()
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="text-center">
+    <a class="btn btn-primary" href="@ViewBag.ReturnUrl">Naruci karte za jos predstava </a>
+</div>
+
+<hr />
+<div class="row">
+    <form asp-action="Index" asp-controller="Narucivanje2">
+        <button class="btn btn-primary btn-block">Poruci</button>
+    </form>
+</div>
+
+
+

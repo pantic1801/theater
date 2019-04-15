@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Predstava>
+
+@{
+    ViewData["Title"] = "Pozoriste Dijalog";
+}
+
+
+
+<form asp-action="_TraziPredstavu">
+
+    
+    <div class="form-group">
+        <label for="Text1">Pretrazi po naslovu:</label>
+        <input id="Text1" type="text" name="deoNaziva" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input id="Submit1" type="submit" value="Pronadji" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Create" asp-controller="Home">Dodaj novu predstavu</a>
+
+
+@foreach (Predstava p in Model)
+{
+    @Html.Partial("_PrikaziPredstavu", p)
+}
+
+
